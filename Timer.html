@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Shah Techno</title>
+        </head>
+
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .main-div
+            {
+                background: red;
+                text-align: center;
+            }
+            
+
+
+
+        </style>
+        <body>
+            <div class="main-div">
+            
+            <p>Stop Watch</p>
+            <br>
+            <button id="btn">Start</button>
+            <button id="btn1">Pause</button>
+        
+    </div>
+
+        <script>
+            const stopNum = document.querySelector('p');
+            const btn = document.querySelector('#btn');
+            const stopInerval = document.querySelector('#btn1');
+
+            let num = 0;
+            let timeRef;
+
+            const showMyNum = () => {
+               
+
+                timeRef = setInterval(() => {
+                    stopNum.innerHTML = `${num}`;
+                    num++;
+                }, 1000)
+            }
+
+            btn.addEventListener('click', showMyNum);
+
+            stopInerval.addEventListener('click', () => {
+                clearInterval( timeRef);
+            });
+
+        </script>
+        </body>
+    
+</html>
